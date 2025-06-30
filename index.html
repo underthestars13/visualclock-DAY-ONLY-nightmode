@@ -81,7 +81,7 @@
 .progress span {
   color: white;
   position: relative;
-  top:15px;
+  top:18px;
   right: 10px;
   font-weight: lighter;
   font-family: "Audiowide", sans-serif;
@@ -268,12 +268,15 @@ per = 0;
        var t = [today.getHours(), today.getMinutes(), today.getSeconds()];
       pc = Math.round(((t[0] * 60 * 60 + t[1] * 60 + t[2]) / (24 * 60 * 60)) * 1000) / 10;
 //  document.querySelector(".time").textContent = t.map((d) => (d < 10 ? "0" + d : d)).join(" : ");
+document.querySelector(".time").textContent = t.map((d) => (d < 10 ? "0" + d : d)).join(" : ");
+
 
   }
 
     function progressLoad() {
   document.querySelector(".progress").style.width = `${per >= pc ? pc : per}%`;
  // document.querySelector(".progress span").innerHTML = `${per >= pc ? pc : per}%`;
+ document.querySelector(".progress span").innerHTML = `${per >= pc ? pc : per}%`;
   per++;
 
 }
